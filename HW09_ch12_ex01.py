@@ -10,14 +10,24 @@
 # Imports
 
 
-# Body
 def most_frequent(s):
-    ...
+  d = {}
+  low_s = s.lower()
+  for c in low_s:
+    if c not in d:
+        d[c] = low_s.count(c)
+  #print(d)
+  sort_result = sorted(sorted(d), key = d.__getitem__, reverse = True)
+  for x in sort_result:
+        print(x)
+
 
 
 ###############################################################################
 def main():   # DO NOT CHANGE BELOW
     print("Example 1:")
+    #most_frequent("aaAbcc")
+
     most_frequent("abcdefghijklmnopqrstuvwxyz")
     print("\nExample 2:")
     most_frequent("The quick brown fox jumps over the lazy dog")
